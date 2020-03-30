@@ -42,7 +42,7 @@ curl -s "https://raw.githubusercontent.com/Ar0xA/USG-DNS-ADBLOCK/master/youtube-
 sed -i -e 's/\r$//; s:.*:address=/&/0\.0\.0\.0:' $temp_ad_file
 
 # get another hosts file in Dnsmasq format, and add the contents to a temporary file
-curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro=0&mimetype=plaintext&useip=0.0.0.0" >> $temp_ad_file
+curl -s "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=dnsmasq&showintro=0&mimetype=plaintext&useip=0.0.0.0" >> $temp_ad_file
 curl -s "https://raw.githubusercontent.com/notracking/hosts-blocklists/master/domains.txt" | grep -v "#">> $temp_ad_file
 
 if [ -f "$temp_ad_file" ]
